@@ -1,11 +1,11 @@
 ---
 page_type: sample
 name: Authenticate and authorize users end-to-end in Azure App Service with JavaScript
-description: This tutorial shows how to secure two App Services (frontend and backend), passing user auth from the frontend app to the backend. 
+description: This tutorial shows how to secure two App Services (frontend and backend), passing user auth from the frontend app to the backend.
 languages:
-- javascript
+  - javascript
 products:
-- azure-app-service
+  - azure-app-service
 ---
 
 # Authenticate and authorize users end-to-end in Azure App Service
@@ -17,14 +17,22 @@ Azure App Service provides a highly scalable, self-patching web hosting service.
 In the tutorial, you learn:
 
 > [!div class="checklist"]
-> * Enable built-in authentication and authorization
-> * Secure apps against unauthenticated requests
-> * Use Azure Active Directory as the identity provider
-> * Access a remote app on behalf of the signed-in user
-> * Secure service-to-service calls with token authentication
-> * Use access tokens from server code
-> * Use access tokens from client (browser) code
+>
+> - Enable built-in authentication and authorization
+> - Secure apps against unauthenticated requests
+> - Use Azure Active Directory as the identity provider
+> - Access a remote app on behalf of the signed-in user
+> - Secure service-to-service calls with token authentication
+> - Use access tokens from server code
+> - Use access tokens from client (browser) code
 
 ## Read the tutorial
 
 [Read the tutorial](https://learn.microsoft.com/azure/app-service/tutorial-auth-aad) to understand how to deploy this scenario to App Service.
+
+az webapp up --resource-group myAuthResourceGroup --name js-e2e-web-app-easy-auth-app-to-app --plan myPlan --sku FREE --os-type Windows --location "West Europe" --runtime "NODE:16LTS"
+
+https://js-e2e-web-app-easy-auth-app-to-app.azurewebsites.net/
+notrapsolutions-play-msal-api-02.azurewebsites.net
+
+az webapp config appsettings set --resource-group myAuthResourceGroup --name js-e2e-web-app-easy-auth-app-to-app --settings BACKEND_URL="https://notrapsolutions-play-msal-api-02.azurewebsites.net"
