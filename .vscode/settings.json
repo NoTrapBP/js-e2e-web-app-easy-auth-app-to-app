@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/387caf8f-c945-4c67-a70a-e57b67cf758b/resourceGroups/myAuthResourceGroup/providers/Microsoft.Web/sites/js-e2e-web-app-easy-auth-app-to-app",
+  "appService.deploySubpath": "."
+}
